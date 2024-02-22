@@ -89,7 +89,7 @@ void move_loop() {
 
 void stop_move() {
     robot.move_robot = false;
-    robot.base_joint_pos = 0;
+    robot.base_joint_dpos = 0;
     robot.lower_arm_dpos = 0;
     robot.main_arm_dpos = 0;
 }
