@@ -26,6 +26,18 @@
 #define SAFETY_VAL 35
 // milliseconds of delay for the servo to reach the position
 #define DELAY 15
+// stepping values the robot takes per iteration
+#define ROBOT_JOINT_STEP 2
+
+enum Command : int {
+    stop = -1,
+    left = 0,
+    right = 1,
+    up = 2, 
+    down = 3,
+    forward = 4,
+    backward = 5
+};
 
 struct Robot {
     bool move_robot;
