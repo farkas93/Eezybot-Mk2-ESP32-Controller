@@ -51,34 +51,32 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
     
     // Handle the command as needed
     switch (command) {
+        case stop:
+            Serial.println("Command: stop");
+            stop_move();
+            break;
         case left:
             Serial.println("Command: left");
             move_left(ROBOT_JOINT_STEP);
-            // Add your code to handle the left command
             break;
         case right:
             Serial.println("Command: right");
             move_right(ROBOT_JOINT_STEP);
-            // Add your code to handle the right command
             break;
         case up:
             Serial.println("Command: up");
-            // Add your code to handle the up command
             move_up(ROBOT_JOINT_STEP);
             break;
         case down:
             Serial.println("Command: down");
-            // Add your code to handle the down command
             move_down(ROBOT_JOINT_STEP);
             break;
         case forward:
             Serial.println("Command: forward");
-            // Add your code to handle the forward command
             move_forward(ROBOT_JOINT_STEP);
             break;
         case backward:
             Serial.println("Command: backward");
-            // Add your code to handle the backward command
             move_backward(ROBOT_JOINT_STEP);
             break;
     }
