@@ -58,9 +58,9 @@ enum Command : int {
 };
 
 // milliseconds of delay for the servo to reach the position
-#define DELAY 15
+#define DELAY 25
 // stepping values the robot takes per iteration
-#define ROBOT_JOINT_STEP 2
+#define ROBOT_JOINT_STEP 1
 
 void setup_robot();
 
