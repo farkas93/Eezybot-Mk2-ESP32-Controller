@@ -1,0 +1,7 @@
+{
+  "wifi_ssid": "YourSSID",
+  "wifi_password": "YourPassword",
+  "mqtt_server": "your.mqtt.server",
+  "mqtt_topic": "robotControl"
+}
+  
