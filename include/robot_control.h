@@ -4,11 +4,13 @@
 #include <ESP32Servo.h>
 
 // PINS TO SERVO MAPPING
+//=====================================================================
 #define PIN_BASE_SERVO 25
 #define PIN_MAIN_ARM_SERVO 26
 #define PIN_LOWER_ARM_SERVO 27
 
 // JOINT LIMITS
+//=====================================================================
 #define UPPER_LIM_BASE 180
 #define LOWER_LIM_BASE 0
 
@@ -36,6 +38,7 @@ struct Robot {
 };
 
 // UTILS
+//=====================================================================
 int clamp(int val, int minVal, int maxVal);
 int interpolateMG946R(float x, float outMin, float outMax);
 bool isSafetyOK(int lowerArmPos, int mainArmPos);
@@ -43,7 +46,7 @@ int clampLowerArmForMechanicalLimits(int lowerArmPos, int mainArmPos);
 float oscillateOnCricle();
 
 // ROBOT CONTROL
-
+//=====================================================================
 enum Command : int {
     stop = -1,
     left = 0,
