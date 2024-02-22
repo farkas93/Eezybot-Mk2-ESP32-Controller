@@ -3,13 +3,12 @@
 
 #include <ESP32Servo.h>
 
-
-// Pins
+// PINS TO SERVO MAPPING
 #define PIN_BASE_SERVO 25
 #define PIN_MAIN_ARM_SERVO 26
 #define PIN_LOWER_ARM_SERVO 27
 
-// Joint Limits
+// JOINT LIMITS
 #define UPPER_LIM_BASE 180
 #define LOWER_LIM_BASE 0
 
@@ -24,20 +23,7 @@
 
 //To protect two servos from crunching eachother
 #define SAFETY_VAL 35
-// milliseconds of delay for the servo to reach the position
-#define DELAY 15
-// stepping values the robot takes per iteration
-#define ROBOT_JOINT_STEP 2
 
-enum Command : int {
-    stop = -1,
-    left = 0,
-    right = 1,
-    up = 2, 
-    down = 3,
-    forward = 4,
-    backward = 5
-};
 
 struct Robot {
     bool move_robot;
@@ -49,12 +35,29 @@ struct Robot {
     int lower_arm_dpos;
 };
 
+// UTILS
 int clamp(int val, int minVal, int maxVal);
 int interpolateMG946R(float x, float outMin, float outMax);
 bool isSafetyOK(int lowerArmPos, int mainArmPos);
 int clampLowerArmForMechanicalLimits(int lowerArmPos, int mainArmPos);
 float oscillateOnCricle();
 
+// ROBOT CONTROL
+
+enum Command : int {
+    stop = -1,
+    left = 0,
+    right = 1,
+    up = 2, 
+    down = 3,
+    forward = 4,
+    backward = 5
+};
+
+// milliseconds of delay for the servo to reach the position
+#define DELAY 15
+// stepping values the robot takes per iteration
+#define ROBOT_JOINT_STEP 2
 
 void setup_robot();
 
