@@ -12,7 +12,7 @@ void setup_robot()
     ESP32PWM::allocateTimer(1); // Allocate additional timers if necessary
     ESP32PWM::allocateTimer(2);
     
-    robot.base_joint_pos = LOWER_LIM_BASE;
+    robot.base_joint_pos = 90;
     robot.main_arm_pos = LOWER_LIM_MAIN_ARM;
     robot.lower_arm_pos = UPPER_LIM_LOWER_ARM;
 
